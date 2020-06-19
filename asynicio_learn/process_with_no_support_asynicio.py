@@ -20,7 +20,7 @@ async def main():
                    'https://www.chiphell.com/',
                    'https://www.baidu.com',
                    'https://www.douban.com'
-               ] * 2 ** 10
+               ]
     tasks = [asyncio.create_task(download_something(url)) for url in url_list]
     done, pedding = await asyncio.wait(tasks)
     print(done, pedding)
