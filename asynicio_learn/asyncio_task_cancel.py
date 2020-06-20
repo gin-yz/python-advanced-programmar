@@ -17,22 +17,21 @@ def callBack(index, task):
 
 async def main():
     print('main process')
-    # 注意比较不同
-    # demo1
+
     tasks = [asyncio.create_task(other(i)) for i in range(10)]
     for index, task in enumerate(tasks):
         task.add_done_callback(partial(callBack, index))
+
+    all_tasks = asyncio.Task.all_tasks()
+    for task in all_tasks:
+        print(task.cancel())
+
     # timeout最多等10秒，若未完成，则进入pendding,可以不
     done_tuple, pendding_tuple = await asyncio.wait(tasks, timeout=10)
-    for done in done_tuple:
-        print(done.result())
-    # 还可以直接tasks
-    # for task in tasks:
-    #     print(task.result())
+    # for done in pendding_tuple:
+    #     print(done.result())
 
-    # demo2
-    # task = await other(0)
-    # task2 = await other(1)
+
 
     print('main end')
 
