@@ -57,7 +57,6 @@ class Fetcher:
             self.client.connect((self.host, 80))  # 阻塞不会消耗cpu
         except BlockingIOError as e:
             pass
-
         #注册
         selector.register(self.client.fileno(), EVENT_WRITE, self.connected)
 

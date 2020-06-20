@@ -15,6 +15,7 @@ def read(conn, mask):
         print('echoing', repr(data), 'to', conn)
         conn.send(data)  # Hope it won't block
     else:
+        print('close data:{}'.format(data))
         print('closing', conn)
         sel.unregister(conn)
         conn.close()
