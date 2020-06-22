@@ -16,3 +16,5 @@ class Sample:
 if __name__ == '__main__':
     with Sample() as sample:
         sample.do_someting()
+
+
