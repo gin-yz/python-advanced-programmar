@@ -7,11 +7,11 @@ import aiomysql
 async def execute(host, password):
    print('start')
 
-   conn = await aiomysql.connect(host=host,port=3306,user='root',password=password,db='test')
+   conn = await aiomysql.connect(host=host,port=55555,user='root',password=password,db='test_demo')
 
    cur = await conn.cursor()
 
-   await cur.execute("SELECT idnew_table1 FROM new_table1")
+   await cur.execute("SELECT * FROM new_table")
 
    result = await cur.fetchall()
 
