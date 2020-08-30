@@ -10,7 +10,7 @@ def start_loop(loop):
     print(f'loop id:{loop.__dict__["_selector"]}')
     task = loop.create_task(do_some_work(8))
     loop.run_until_complete(task)
-
+    # loop.run_forever()
 
 async def do_some_work(x):
     loop = asyncio.get_event_loop()
@@ -26,3 +26,4 @@ t.start()
 
 asyncio.run_coroutine_threadsafe(do_some_work(6), new_loop)
 asyncio.run_coroutine_threadsafe(do_some_work(4), new_loop)
+

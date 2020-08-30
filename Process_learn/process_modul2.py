@@ -17,3 +17,4 @@ class ChildProcess(Process):
 if __name__ == '__main__':
     p = ChildProcess(2)
     p.start()
+    print('zu进程终止')

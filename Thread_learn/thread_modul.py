@@ -21,3 +21,4 @@ if __name__ == '__main__':
     thread1.join()
 
     print('main prcess finish')
+    print('main prcess finish')
